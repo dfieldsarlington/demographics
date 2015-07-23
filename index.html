@@ -21,8 +21,8 @@ p {
 	float: left;
 	top:10px;
 	left:10px;
-	width:35%;
-	height:400px;
+	width:33%;
+	
 	background-color: rgb(252,245,223);
 	cursor: pointer;
 }
@@ -31,16 +31,16 @@ p {
 	position: relative;
 	top:10px;
 	left:10px;
-	width:35%;
-	height:400px;
+	width:33%;
+	
 	background-color: rgb(252,245,223);
 }	
 
 #BarChart {    
 	float: right;
 	top:10px;
-	width:35%;
-	height: 400px;
+	width:33%;
+	
 	background-color: rgb(252,245,223);
 }
 
@@ -120,7 +120,21 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 		  
       });
   </script>
-
+<script type="text/javascript">
+//Start Line Chart
+var svg = dimple.newSvg("#LineChart", "80%", "80%");
+    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/totpop.csv", function (data) {
+      data = dimple.filterData(data, "totyear", "1960");
+      var LineChart = new dimple.chart(svgLine, data);
+     
+      var x = LineChart.addCategoryAxis("x", "totyear");
+      x.addOrderRule("Date");
+      LineChart.addMeasureAxis("y", "totpop");
+      
+      LineChart.addLegend(60, 10, 500, 20, "right");
+      LineChart.draw();
+    });
+</script>	
   <script type="text/javascript">
   //Start Bar Chart
         var svgBar = dimple.newSvg("#BarChart", "80%", "85%");
