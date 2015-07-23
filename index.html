@@ -66,7 +66,7 @@ p {
   //Start Pie Chart
 var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 		var PieChart;
-            d3.csv("https://raw.githubusercontent.com/dfieldsarlington/test/gh-pages/race.csv", function (data) {
+            d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/race.csv", function (data) {
 		dimple.filterData(data, "Race Year", "1960");
 		var PieChart = new dimple.chart(svgPie, data);
 	
@@ -123,7 +123,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 <script type="text/javascript">
 //Start Line Chart
 var svg = dimple.newSvg("#LineChart", "80%", "80%");
-    d3.csv("/data/example_data.tsv", function (data) {
+    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/totpop.csv", function (data) {
       data = dimple.filterData(data, "totyear")
       var LineChart = new dimple.chart(svgLine, data);
      
@@ -139,7 +139,7 @@ var svg = dimple.newSvg("#LineChart", "80%", "80%");
   <script type="text/javascript">
   //Start Bar Chart
         var svgBar = dimple.newSvg("#BarChart", "80%", "85%");
-    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/test/gh-pages/pyramid.csv", function (data) {
+    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/pyramid.csv", function (data) {
       dimple.filterData(data, "year", "1960");
 	  var BarChart = new dimple.chart(svgBar, data);
       
