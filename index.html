@@ -36,7 +36,7 @@ p {
 	background-color: rgb(252,245,223);
 }	
 
-#HHLineChart {    
+#HHBarChart {    
 	float: right;
 	top:10px;
 	left:10px;
@@ -71,7 +71,7 @@ p {
 <div id="PieChart"></div>
 <div id="BarChart"></div>
 <div id="LineChart"></div>
-<div id="HHLineChart"></div>
+<div id="HHBarChart"></div>
 
   <script type="text/javascript">
   //Start Pie Chart
@@ -169,19 +169,16 @@ var svgLine = dimple.newSvg("#LineChart", "70%", "80%");
 </script>
 
   <script type="text/javascript">
-//Start HHLine Chart
-var svgHHLine = dimple.newSvg("#HHLineChart", "70%", "80%");
+//Start HHBar Chart
+var svgHHBar = dimple.newSvg("#HHBarChart", "70%", "80%");
     d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/households.csv", function (data) {
-      dimple.filterData(data, "Year", "1970");
-      var HHLineChart = new dimple.chart(svgHHLine, data);
-      var x = HHLineChart.addCategoryAxis("x", "Year");
+      var HHBarChart = new dimple.chart(svgHHBar, data);
+      HHBarChart.setBounds(60, 30, 510, 305)
+      var x = HHBarChart.addCategoryAxis("x", "Year");
       x.addOrderRule("Year");
-      HHLineChart.addMeasureAxis("y", "Total Households");
-      var s = HHLineChart.addSeries(null, dimple.plot.line);
-      s.interpolation = "cardinal";
-      s.lineMarkers = true;
-	  
-      HHLineChart.draw();
+      HHBarChart.addMeasureAxis("y", "Total Households");
+      HHBarChart.addSeries(null, dimple.plot.bar);
+      HHBarChart.draw();
     });
 </script>
 </body>
