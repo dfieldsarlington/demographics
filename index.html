@@ -176,13 +176,10 @@ var svgHHLine = dimple.newSvg("#HHLineChart", "70%", "80%");
       var HHLineChart = new dimple.chart(svgHHLine, data);
       var x = HHLineChart.addCategoryAxis("x", "Year");
       x.addOrderRule("Year");
-      HHLineChart.addMeasureAxis("y", "Total Households");
-      var s = HHLineChart.addSeries(null, dimple.plot.line);
+      HHLineChart.addMeasureAxis("y", "Households");
+      var s = HHLineChart.addSeries("Type", dimple.plot.line);
       s.interpolation = "cardinal";
       s.lineMarkers = true;
-	  var w = HHLineChart.addSeries("Household Size >4 ", dimple.plot.line);
-      w.interpolation = "cardinal";
-      w.lineMarkers = true;
       HHLineChart.draw();
     });
 </script>
