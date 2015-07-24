@@ -34,7 +34,6 @@ p {
 	width: 50%;
 	height: 600px
 	background-color: rgb(252,245,223);
-	padding: 15px;
 }	
 
 #BarChart {    
@@ -76,7 +75,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 		var ring = PieChart.addSeries("Race", dimple.plot.pie);
 		ring.innerRadius = "50%";
 		
-		var PieLegend = PieChart.addLegend (70, 230, 85, 290, "right");
+		var PieLegend = PieChart.addLegend (80, 230, 85, 290, "right");
 		// Create a storyboard for Race Year
 		var PieStoryboard = PieChart.setStoryboard("Race");
 		PieStoryboard.categoryFields = ["Race Year"];
@@ -144,7 +143,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
   
   <script type="text/javascript">
 //Start Line Chart
-var svgLine = dimple.newSvg("#LineChart", "80%", "80%");
+var svgLine = dimple.newSvg("#LineChart", "70%", "80%");
     d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/totpop.csv", function (data) {
       dimple.filterData(data, "Year", "1960");
       var LineChart = new dimple.chart(svgLine, data);
