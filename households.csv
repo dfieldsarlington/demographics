@@ -1,6 +1,6 @@
-Year,Total Households
-1970,17626
-1980,18552
-1990,18819
-2000,19011
-2010,18969
+Year,Total Households,Household Size >4 ,Household Size <4 
+1970,17626,,
+1980,18552,,
+1990,18819,,
+2000,19011,,
+2010,18969,,
