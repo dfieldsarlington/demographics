@@ -153,6 +153,7 @@ var svgLine = dimple.newSvg("#LineChart", "80%", "80%");
       var s = LineChart.addSeries(null, dimple.plot.line);
       s.interpolation = "cardinal";
       s.lineMarkers = true;
+	  LineChart.setStoryboard("Year");
       LineChart.draw();
     });
 </script>
