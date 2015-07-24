@@ -60,8 +60,9 @@ p {
 </head>
 <body>
 <div id="PieChart"></div>
-<div id="LineChart"></div>
 <div id="BarChart"></div>
+<div id="LineChart"></div>
+
   <script type="text/javascript">
   //Start Pie Chart
 var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
@@ -120,21 +121,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 		  
       });
   </script>
-<script type="text/javascript">
-//Start Line Chart
-var svgLine = dimple.newSvg("#LineChart", "80%", "80%");
-    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/totpop.csv", function (data) {
-      data = dimple.filterData(data, "totyear", "1960");
-      var LineChart = new dimple.chart(svgLine, data);
-     
-      var x = LineChart.addCategoryAxis("x", "totyear");
-      x.addOrderRule("Date");
-      LineChart.addMeasureAxis("y", "totpop");
-      
-      LineChart.addLegend(60, 10, 500, 20, "right");
-      LineChart.draw();
-    });
-</script>	
+  
   <script type="text/javascript">
   //Start Bar Chart
         var svgBar = dimple.newSvg("#BarChart", "80%", "85%");
@@ -153,5 +140,21 @@ var svgLine = dimple.newSvg("#LineChart", "80%", "80%");
 	  BarChart.draw();
     });
   </script>
+  
+  <script type="text/javascript">
+//Start Line Chart
+var svgLine = dimple.newSvg("#LineChart", "80%", "80%");
+    d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/totpop.csv", function (data) {
+      data = dimple.filterData(data, "totyear", "1960");
+      var LineChart = new dimple.chart(svgLine, data);
+     
+      var x = LineChart.addCategoryAxis("x", "totyear");
+      x.addOrderRule("totyear");
+      LineChart.addMeasureAxis("y", "totpop");
+      
+      LineChart.addLegend(60, 10, 500, 20, "right");
+      LineChart.draw();
+    });
+</script>
 </body>
 </html>
