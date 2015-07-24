@@ -75,7 +75,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
 		var ring = PieChart.addSeries("Race", dimple.plot.pie);
 		ring.innerRadius = "50%";
 		
-		var PieLegend = PieChart.addLegend (80, 230, 85, 290, "right");
+		var PieLegend = PieChart.addLegend (80, 230, 85, 290, "left");
 		// Create a storyboard for Race Year
 		var PieStoryboard = PieChart.setStoryboard("Race");
 		PieStoryboard.categoryFields = ["Race Year"];
@@ -135,7 +135,7 @@ var svgPie = dimple.newSvg("#PieChart", "80%", "80%");
       var y = BarChart.addCategoryAxis("y", "age");
       y.addOrderRule("age");
       BarChart.addSeries("sex", dimple.plot.bar);
-      BarChart.addLegend(60, 10, 510, 20, "right");
+      BarChart.addLegend(50, 10, 500, 20, "left");
       BarChart.setStoryboard("year");
 	  BarChart.draw();
     });
