@@ -180,6 +180,7 @@ var svgHHLine = dimple.newSvg("#HHLineChart", "70%", "80%");
       var s = HHLineChart.addSeries("Type", dimple.plot.line);
       s.interpolation = "cardinal";
       s.lineMarkers = true;
+	  HHLineChart.addLegend(70, 10, 500, 20, "left");
       HHLineChart.draw();
     });
 </script>
