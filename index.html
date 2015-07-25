@@ -172,7 +172,7 @@ var svgLine = dimple.newSvg("#LineChart", "70%", "80%");
 //Start HHLine Chart
 var svgHHLine = dimple.newSvg("#HHLineChart", "70%", "80%");
     d3.csv("https://raw.githubusercontent.com/dfieldsarlington/demographics/gh-pages/households.csv", function (data) {
-      dimple.filterData(data, "Type", ["Total", "Under 4", "Over 4" ]);
+      dimple.filterData(data, "Type", ["Total", "Under 3", "Over 3" ]);
       var HHLineChart = new dimple.chart(svgHHLine, data);
       var x = HHLineChart.addCategoryAxis("x", "Year");
       x.addOrderRule("Year");
