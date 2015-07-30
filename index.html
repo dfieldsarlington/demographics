@@ -204,8 +204,8 @@ var svgLine = dimple.newSvg("#LineChart", "70%", "80%");
       // Colour the bars manually so they don't overwhelm the lines
       HHLineChart.assignColor("bars", "black", "black", 0.15);
       x.addOrderRule("Date");
-	  y1.tickFormat = ",d";
       HHLineChart.draw();
+	  y1.tickFormat = ",d";
       // Once Draw is called, this just changes the number format in the tooltips which for these particular
       // numbers is a little too heavily rounded.  I assume your real data isn't like this
       // so you probably won't want this line, but it's a useful tip anyway!
