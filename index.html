@@ -151,7 +151,7 @@ p {
           var firstTick = true;
 
           // Place the indicator bar chart to the right
-          indicator.setBounds(440, 120, 150, 300);
+          indicator.setBounds(440, 120, 120, 200);
 
           // Add dates along the y axis
           var y = indicator.addCategoryAxis("y", "year");
@@ -204,7 +204,7 @@ p {
                   .style("opacity", 0.4);
 				  
 	  var BarChart = new dimple.chart(svg, data);			  
-      BarChart.setBounds(60, 160, 355, 310)
+     
 	  var BarChartAxis = BarChart.addMeasureAxis("x", "people");
 	  BarChartAxis.overrideMin = -4500;
 	  BarChartAxis.overrideMax = 4500;
